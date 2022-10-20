@@ -7,10 +7,10 @@ import text from '../assets/text/copy.json'
   <section class="padding-48" id="home">
     <div class="container" data-auto-grid="1">
       <div class="grid">
-        <div class="small-12 medium-8 medium-offset-4">
+        <div class="small-10 medium-8 medium-offset-4">
           <h2 class="margin-16 bottom title-left">The Association</h2>
         </div>
-        <div class="small-12 medium-8 space-9" data-animation="fade-in">
+        <div class="small-10 medium-8 space-9" data-animation="fade-in">
         <p>{text.filter((x)=>x.page === "thesis")[0].body[0].content}</p>
         </div>
       </div>
@@ -21,7 +21,7 @@ import text from '../assets/text/copy.json'
     <section class="padding-48 text-neutral-100 bg-neutral-900" id="ipfs-funds">
       <div class="container">
         <div class="grid">
-          <div class="small-12 medium-8 space-content">
+          <div class="small-10 medium-8 space-content">
             <h2 class="margin-16">{text.filter((x)=>x.page === "ipfs-fund")[0].title}</h2>
             <p>{text.filter((x)=>x.page === "ipfs-fund")[0].body[0].content}</p>
           </div>
@@ -33,12 +33,12 @@ import text from '../assets/text/copy.json'
     <section class="padding-48" id="private-retreival-funds">
     <div class="container">
         <div class="grid">
-          <div class="small-12 medium-6 space-content">
+          <div class="small-10 medium-6 space-content">
             <h2>{text.filter((x)=>x.page === "private-retrieval")[0].title}</h2>
             <p>{text.filter((x)=>x.page === "private-retrieval")[0].body[0].content}</p>
           </div>
 
-          <div class="small-12 medium-8 offset-medium-6 space-content text-neutral-100 bg-neutral-900 space-32  elevation-500">
+          <div class="small-11 medium-8 offset-medium-6 space-content text-neutral-100 bg-neutral-900 space-32  elevation-500">
             <h3>{text.filter((x)=>x.page === "private-retrieval")[0].list.blurb}</h3>
             <ul>
               {text.filter((x)=>x.page === "private-retrieval")[0].list.content.map(item =>
@@ -59,7 +59,7 @@ import text from '../assets/text/copy.json'
 
         <!-- GRID WITH REASONS -->
         {text.filter((x)=>x.page === "why")[0].list.content.map(item =>
-            <div class="small-12 medium-3 space-content space-16 border-thin-white break-word">
+            <div class="small-10 medium-3 space-content space-16 border-thin-white break-word">
               <p>{item.content}</p>
             </div>
   					)
@@ -74,7 +74,7 @@ import text from '../assets/text/copy.json'
           <div class="container">
               <div class="space-content space-32">
                 <h2>{text.filter((x)=>x.page === "about")[0].title}</h2>
-                <p class="small-12 medium-8">{text.filter((x)=>x.page === "about")[0].body[0].content}</p>
+                <p class="small-10 medium-8">{text.filter((x)=>x.page === "about")[0].body[0].content}</p>
               </div>
 
               <div class="space-content space-32 margin-32 text-neutral-100 bg-neutral-900 space-32 elevation-500">
