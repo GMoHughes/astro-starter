@@ -1,57 +1,85 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
+import text from '../assets/text/copy.json'
 ---
 
-<DefaultLayout title="Home">
-  <section class="margin-48">
-    <div class="container">
-      <h1>Accessible Astro <em>Starter</em></h1><br>
-    </div>
-  </section>
-  <section class="padding-48 color-primary">
-    <div class="container">
-      <h2 class="margin-16 bottom">Auto Grid</h2>
-    </div>
-    <div class="container" data-auto-grid="3">
-      <div class="text-neutral-100 bg-neutral-900 space-32 radius-large elevation-500" data-animation="fade-in">
-        <h3>Column 1</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem accusantium placeat eius officiis veniam totam. Earum eos et voluptate dolorem. </p>
-      </div>
-      <div class="text-neutral-100 bg-neutral-900 space-32 radius-large elevation-500" data-animation="fade-in" data-animation-delay="0.25s">
-        <h3>Column 2</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem accusantium placeat eius officiis veniam totam. Earum eos et voluptate dolorem.</p>
-      </div>
-      <div class="text-neutral-100 bg-neutral-900 space-32 radius-large elevation-500" data-animation="fade-in" data-animation-delay="0.5s">
-        <h3>Column 3</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem accusantium placeat eius officiis veniam totam. Earum eos et voluptate dolorem.</p>
-      </div>
-    </div>
-    <div class="container margin-16 top">
-      <a href="#" class="button">Tab to me first!</a>&nbsp;
-      <a href="#" class="button color-secondary">Then it's my turn</a>
-    </div>
-  </section>
-  <section class="margin-64">
-    <div class="container">
+<DefaultLayout title="Acrological">
+  <section class="padding-48" id="home">
+    <div class="container" data-auto-grid="1">
       <div class="grid">
-        <div class="small-12">
-          <h2>12 Column Grid</h2>
+        <div class="small-12 medium-8 medium-offset-4">
+          <h2 class="margin-16 bottom title-left">The Association</h2>
         </div>
-        <div class="small-12 medium-3 space-content">
-          <h3>Sidebar</h3>
-          <ul>
-            <li>Lorem ipsum dolor sit amet.</li>
-            <li>Lorem ipsum dolor sit amet.</li>
-            <li>Lorem ipsum dolor sit amet.</li>
-            <li>Lorem ipsum dolor sit amet.</li>
-          </ul>
-        </div>
-        <div class="small-12 medium-8 offset-medium-4 space-content">
-          <h3>Main</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi mollitia alias sunt accusamus reiciendis fuga delectus, repellendus molestiae dolore illo iusto eligendi eaque qui hic facilis assumenda! Velit, minus, nobis. <strong><a href="#">And lastly tab to me</a></strong>.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi mollitia alias sunt accusamus reiciendis fuga delectus, repellendus molestiae dolore illo iusto eligendi eaque qui hic facilis assumenda! Velit, minus, nobis.</p>
+        <div class="small-12 medium-8 space-9" data-animation="fade-in">
+        <p>{text.filter((x)=>x.page === "thesis")[0].body[0].content}</p>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- IPFS FUNDS -->
+    <section class="padding-48 text-neutral-100 bg-neutral-900" id="ipfs-funds">
+      <div class="container">
+        <div class="grid">
+          <div class="small-12 medium-8 space-content">
+            <h2 class="margin-16">{text.filter((x)=>x.page === "ipfs-fund")[0].title}</h2>
+            <p>{text.filter((x)=>x.page === "ipfs-fund")[0].body[0].content}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- PRIVATE RETRIEVAL FUNDS -->
+    <section class="padding-48" id="private-retreival-funds">
+    <div class="container">
+        <div class="grid">
+          <div class="small-12 medium-6 space-content">
+            <h2>{text.filter((x)=>x.page === "private-retrieval")[0].title}</h2>
+            <p>{text.filter((x)=>x.page === "private-retrieval")[0].body[0].content}</p>
+          </div>
+
+          <div class="small-12 medium-8 offset-medium-6 space-content text-neutral-100 bg-neutral-900 space-32  elevation-500">
+            <h3>{text.filter((x)=>x.page === "private-retrieval")[0].list.blurb}</h3>
+            <ul>
+              {text.filter((x)=>x.page === "private-retrieval")[0].list.content.map(item =>
+                  <li> {item.content} </li>
+                )
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- WHY -->
+    <section class="padding-48 bg-neutral-900" id="why">
+      <div class="container text-neutral-100">
+        <h2 class="text-neutral-100">{text.filter((x)=>x.page === "why")[0].title}</h2>
+        <div class="grid space-32 full-height" data-auto-grid="9">
+
+        <!-- GRID WITH REASONS -->
+        {text.filter((x)=>x.page === "why")[0].list.content.map(item =>
+            <div class="small-12 medium-3 space-content space-16 border-thin-white break-word">
+              <p>{item.content}</p>
+            </div>
+  					)
+				}
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ABOUT -->
+        <section class="padding-48" id="about">
+          <div class="container">
+              <div class="space-content space-32">
+                <h2>{text.filter((x)=>x.page === "about")[0].title}</h2>
+                <p class="small-12 medium-8">{text.filter((x)=>x.page === "about")[0].body[0].content}</p>
+              </div>
+
+              <div class="space-content space-32 margin-32 text-neutral-100 bg-neutral-900 space-32 elevation-500">
+                  <p>{text.filter((x)=>x.page === "about")[0].body[1].content}</p>
+              </div>
+          </div>
+        </section>
 </DefaultLayout>

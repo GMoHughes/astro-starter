@@ -11,3 +11,8 @@
 .radius-large {
   @include radius-large;
 }
+
+
+.border-thin-white {
+ border: 1px solid white;
+}

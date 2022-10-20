@@ -14,13 +14,16 @@
   --radius-large: 6px;
   --gap-default: 2rem;
   --font-measure: 70ch;
-  --font-family-default: "Open Sans", sans-serif;
-  --font-family-special: "Open Sans", sans-serif;
+  --font-family-default: system-ui, sans-serif;
+  --font-family-special: 'FragmentMono', monospace;
+  --font-family-special2: 'FragmentMono', monospace;
   --font-color: var(--neutral-900);
-  --action-color: var(--secondary-500);
-  --background: var(--neutral-100);
+  --action-color:  hsl(287 40% 45%);
+  --link-color: black;
+  --link-clicked-color: hsl(287 40% 45%);
+  --background: var(--neutral-0);
   --primary-background: var(--primary-100);
-  --neutral-background: var(--neutral-200);
+  --neutral-background: var(--neutral-100);
 }
 
 .darkmode {

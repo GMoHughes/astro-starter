@@ -6,31 +6,33 @@ import { SkipLinks } from 'accessible-astro-components'
 <header>
   <SkipLinks />
   <Navigation>
-    <li class="menu-item">
-      <a href="/">Home</a>
-    </li>
-    <li class="menu-item">
-      <a href="/blog/">Blog</a>
-    </li>
     <li class="menu-item has-dropdown">
-      <button aria-haspopup="true" aria-expanded="false">Dropdown</button>
+      <button aria-haspopup="true" aria-expanded="false">Funds</button>
       <ul>
         <li class="submenu-item">
-          <a href="/dropdown/subpage1/">Sub menu item 1</a>
+          <a href="#ipfs-funds">IPFS Fund</a>
         </li>
         <li class="submenu-item">
-          <a href="/dropdown/subpage2/">Sub menu item 2</a>
-        </li>
-        <li class="submenu-item">
-          <a href="/dropdown/subpage3/">Sub menu item 3</a>
+          <a href="#private-retreival-funds">Private Retrieval</a>
         </li>
       </ul>
     </li>
     <li class="menu-item">
-      <a href="/example-page/">Example Page</a>
+      <a href="#why">Why</a>
     </li>
     <li class="menu-item">
-      <a href="https://github.com/markteekman/accessible-astro-starter" title="external link" rel="external noopener noreferrer">External Link</a>
+      <a href="#about">About</a>
+    </li>
+    <li class="menu-item has-dropdown">
+      <button aria-haspopup="true" aria-expanded="false">How To</button>
+      <ul>
+        <li class="submenu-item">
+          <a href="/how-to/new-blue-funder-app/">New Blue Funder App</a>
+        </li>
+        <li class="submenu-item">
+          <a href="/how-to/open-rfps">Open RFP's</a>
+        </li>
+      </ul>
     </li>
   </Navigation>
 </header>
@@ -52,6 +54,12 @@ import { SkipLinks } from 'accessible-astro-components'
 
     img {
       max-height: 40px;
+    }
+
+    .menu-item {
+      > a {
+        font-family: 'meyrin';
+      }
     }
   }
 </style>

@@ -1,11 +1,79 @@
 ---
+import Navigation from '../components/Navigation.astro'
+
 const currentYear = new Date().getFullYear()
 ---
 
 <footer>
-  <section class="padding-16 color-neutral">
-    <div class="container">
-      <p>&copy; {currentYear} - Starter Theme for <a href="https://astro.build/">Astro</a>.</p>
+<hr>
+<div id="footer-navigation" class="is-desktop padding-16 color-neutral">
+  <div class="container">
+    <a href="/">
+      <img class = "logo-footer" src={(await import('../assets/img/logo-ver.png')).default} alt="Arcological Logo">
+    </a>
+    <div class="wrapper">
+      <nav class="desktop-menu">
+        <ul>
+          <li class="menu-item">
+            <a href="">Telegram</a>
+          </li>
+          <li class="menu-item">
+            <a href="">Discord</a>
+          </li>
+        </ul>
+      </nav>
     </div>
-  </section>
+  </div>
+</div>
 </footer>
+
+<style lang="scss" is:global>
+  @use '../assets/scss/base/border' as *;
+  @use '../assets/scss/base/breakpoint' as *;
+  @use '../assets/scss/base/elevation' as *;
+  @use '../assets/scss/base/outline' as *;
+  @use '../assets/scss/base/size' as *;
+
+  #footer-navigation {
+    > .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    &.is-desktop {
+      .desktop-menu {
+        visibility: visible;
+        z-index: 0;
+        position: static;
+      }
+    }
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    nav {
+      font-family: var(--font-family-special2);
+      @include size-18;
+
+      > ul {
+        display: flex;
+        gap: 2.5rem;
+        text-decoration: underline;
+
+        .is-active {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .logo-footer {
+    max-width: 15ch;
+    position: relative;
+    left: -20%;
+  }
+</style>

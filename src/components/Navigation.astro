@@ -6,7 +6,7 @@ import { DarkMode } from 'accessible-astro-components'
 <div id="main-navigation" class="is-desktop padding-16 color-neutral">
   <div class="container">
     <a href="/">
-      <img src={(await import('../assets/img/logo.svg')).default} alt="Your Logo">
+      <img class = 'logo-header' src={(await import('../assets/img/logo-hor.png')).default} alt="Arcological Logo">
     </a>
     <div class="wrapper">
       <nav class="desktop-menu">
@@ -207,29 +207,29 @@ import { DarkMode } from 'accessible-astro-components'
     }
 
     &.is-desktop {
-      .desktop-menu { 
+      .desktop-menu {
         visibility: visible;
         z-index: 0;
         position: static;
       }
 
-      .mobile-menu { 
-        display: none; 
+      .mobile-menu {
+        display: none;
       }
     }
 
     &.is-mobile {
       flex-direction: column;
 
-      .mobile-menu { 
-        display: none; 
+      .mobile-menu {
+        display: none;
 
         &.show {
           display: block;
         }
       }
 
-      .desktop-menu { 
+      .desktop-menu {
         visibility: hidden;
         z-index: -99;
         position: absolute;
@@ -248,17 +248,22 @@ import { DarkMode } from 'accessible-astro-components'
     }
 
     nav {
+      font-family: var(--font-family-special2);
+      @include size-24;
+
       > ul {
         display: flex;
-        gap: 1.5rem;
+        gap: 2.5rem;
+        text-decoration: underline;
 
         .is-active {
-          font-weight: bold;
+          text-decoration: underline;
         }
       }
     }
 
     .mobile-menu {
+      font-family: var(--font-family-special2);
       flex-basis: 100%;
       padding: 2rem 0;
 
@@ -273,6 +278,7 @@ import { DarkMode } from 'accessible-astro-components'
 
       a,
       button {
+        text-decoration: underline;
         display: block;
         width: 100%;
         padding: 0.5rem 0;
@@ -283,15 +289,16 @@ import { DarkMode } from 'accessible-astro-components'
       position: relative;
 
       > button {
+        font-family: var(--font-family-special2);
         display: flex;
         align-items: center;
         gap: 0.5rem;
         padding: 0;
         margin-top: -1px;
         border: none;
-        color: var(--action-color);
-        text-decoration: underline;
-        @include size-16;
+        color: var(--link-color);
+        /* text-decoration: underline; */
+        @include size-24;
 
         &::after {
           content: '';
@@ -300,7 +307,7 @@ import { DarkMode } from 'accessible-astro-components'
           margin-top: -0.25rem;
           border-style: solid;
           border-width: 0.2em 0.2em 0 0;
-          transform: rotate(135deg);
+          /* transform: rotate(135deg); */
         }
 
         &.show {
@@ -336,6 +343,7 @@ import { DarkMode } from 'accessible-astro-components'
   }
 
   .darkmode-toggle {
+    display: none;
     padding: 0;
     border: none;
 
@@ -369,5 +377,11 @@ import { DarkMode } from 'accessible-astro-components'
         fill: var(--primary-400);
       }
     }
+  }
+
+  .logo-header {
+    max-width: 35ch;
+    position: relative;
+left: -10%;
   }
 </style>

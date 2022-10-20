@@ -29,6 +29,11 @@
   grid-gap: var(--gap-default);
   align-items: start;
 
+  &.full-height {
+    > div {
+      height: 100%;
+    }
+  }
   &.no-gutters {
     grid-gap: 0;
   }
