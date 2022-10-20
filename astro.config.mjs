@@ -8,7 +8,7 @@ const __dirname = dirname(__filename);
 // https://astro.build/config
 export default defineConfig({
     site: 'https://gmohughes.github.io',
-    base: '/arcological-website',
+    base: '/astro-starter',
     vite: {
       resolve: {
         alias: {
