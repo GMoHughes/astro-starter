@@ -2,11 +2,11 @@
 // | Globals
 // | -------------------------------------------------------------
 
-@use "base/reset";
-@use "base/root";
-@use "base/font";
-@use "base/list";
+@import "base/reset";
+@import "base/root";
+@import "base/font";
+@import "base/list";
 
-@use "base/auto-grid";
-@use "base/grid";
-@use "base/utility";
+@import "base/auto-grid";
+@import "base/grid";
+@import "base/utility";
