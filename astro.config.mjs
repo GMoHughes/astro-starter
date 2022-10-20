@@ -26,7 +26,7 @@ export default {
       preprocessorOptions: {
         scss: {
           // path to your scss variables
-          additionalData: `@import "@/assets/scss/global.scss";`
+          additionalData: `@import "@/src/assets/scss/global.scss";`
         }
       }
     }
